@@ -13,6 +13,9 @@ This project is built using **HTML, CSS, and JavaScript** and is designed for le
 
 **This digital clock website was created by Calculator Qasim Jiho.**
 
+## 🚀 Live Demo
+👉 https://digital-clock-rho-gilt.vercel.app/
+
 The project demonstrates basic front-end development concepts such as time handling, DOM manipulation, and automatic updates using JavaScript.
 
 ---
