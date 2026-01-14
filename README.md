@@ -79,5 +79,3 @@ Inspired by beginner JavaScript clock projects
 
 Thanks to the open-source community
 
-yaml
-Copy code
