@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            background: linear-gradient(50deg, #7e6a6a,rgb(91, 105, 25),#b17878);
+        }
+
+        div {
+            background-color: rgb(236, 243, 250);
+            margin: 35px 20px;
+            padding: 50px 0px;
+            gap: 45px;
+            height: 800px;
+            width: 250px;
+            text-align: center;
+            transition: 3.40s;
+
+
+        }
+        div:hover{
+            transform: scale(1.1);
+        }
+
+        #clock:hover ,#clo:hover ,#cl:hover{
+            background-color: rgba(195, 224, 28, 0.356);
+            color: rgb(224, 205, 205);
+            box-shadow: 10px 10px rgb(9, 230, 156);
+        }
+
+        #clock ,#clo {
+            background-color: #8d8181;
+            font-size: 43px;
+            font-style: italic;
+            font-weight: bold;
+            border: none;
+            border-radius: 60px 70px 40px 140px;
+            opacity: 0.9;
+            box-shadow: 10px 8px black;
+            color: rgb(255, 255, 255);
+
+
+        }
+
+        #cl {
+            background-color: #7c6d6d;
+            font-size: 35px;
+            font-style: italic;
+            font-weight: bold;
+            border: none;
+            border-radius: 60px 70px 40px 140px;
+            opacity: 0.9;
+            box-shadow: 10px 10px black;
+            margin-bottom: 80px;
+            color: rgb(255, 255, 255);
+
+        }
+        .whatsapp-float {
+            right: 32px;
+            bottom: 32px;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            z-index: 999;
+            background: #25d366;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            padding: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .whatsapp-float img {
+            display: block;
+        }
+
+        .facebook-float {
+            position: fixed;
+            left: 18px;
+            bottom: 18px;
+            z-index: 999;
+            background: #1877f3;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            padding: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .facebook-float img {
+            display: block;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="clock"> 00</div>
+    <div id="clo"> 00</div>
+    <div id="cl"> 00</div>
+<footer>
+<a href="https://wwww.facebook.com/muhammad.qasim.412368" target="_blank" class="facebook-float"
+    aria-label="Visit Facebook">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"
+        style="width:48px;height:48px;">
+</a>
+<a href="https://wa.me/+923125726553" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"
+        style="width:48px;height:48px;">
+</a>
+</footer>
+    <script>
+        function updateclock() {
+            const now = new Date();
+            let h = now.getHours();
+            let m = now.getMinutes();
+            let s = now.getSeconds();
+            let se = "Am";
+
+            if (h ===0){
+                h=12;
+            }else if( h>=12){
+                se ="Pm";
+            }if (h>12){
+                h = h-12;
+            }
+
+
+            h = String(h).padStart(2, "0");
+            m = String(m).padStart(2, "0");
+            s = String(s).padStart(2, "0");
+
+            const timeString = `Hour<br>${h}   ${se}`;
+            const minuted = `Minute <br>${m}`
+            const second = `Second <br>${s}`
+
+
+            document.getElementById("clock").innerHTML = timeString;
+            document.getElementById("clo").innerHTML = minuted;
+            document.getElementById("cl").innerHTML = second;
+        }
+        updateclock();
+        setInterval(updateclock, 1000);
+    </script>
+</body>
+
+</html>
